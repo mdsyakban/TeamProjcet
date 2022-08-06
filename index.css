@@ -1,0 +1,20 @@
+.item-content {
+    background-color: #198754;
+}
+
+#produk-terlaris {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.footer {
+background-color: black;
+}
+
+.footer h1 {
+    color: white;
+    text-align: center;
+    font-family: calibri;
+    font-size: 20px;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="vendor/bootstrap-5.2.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+              <span class="navbar-brand">TERRA</span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Produk
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Sayur</a></li>
+                      <li><a class="dropdown-item" href="#">Buah-Buahan</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Keranjang</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Transaksi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Akun</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+          <div class="container-fluid py-3">
+            <div id="carouselExampleCaptions" class="carousel slide col-lg-8 offset-lg-2" data-bs-ride="false">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://koran-jakarta.com/images/article/kementan-dorong-satu-data-hortikultura-211106084830.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Terra Fruits and Vegetable</h5>
+                    <p>Selamat Datang dan Selamat Berbelanja.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://www.jd.id/news/wp-content/uploads/2020/05/sayur-dan-buah.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Terra Fruits and Vegetable</h5>
+                    <p>Selamat Datang dan Selamat Berbelanja.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://onecms-res.cloudinary.com/image/upload/s--KBWGtvAD--/c_fill%2Cg_auto%2Ch_676%2Cw_1200/f_auto%2Cq_auto/v1/berita-migration/fruits-and-vegetable.jpg?itok=BWSKQSKq" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Terra Fruits and Vegetable</h5>
+                    <p>Selamat Datang dan Selamat Berbelanja.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div> 
+
+          <div class="container-fluid item-content">
+            <br>
+            <p id="produk-terlaris">Produk Terlaris :</p>
+            <div class="col-10 offset-1">
+              <div class="row">
+                <div class="col-3  ">
+                  <div class="card" >
+                    <img src="https://cdn-cas.orami.co.id/parenting/images/apel.width-800.jpg" class="card-img-top" alt="Apel">
+                    <div class="card-body">
+                      <h5 class="card-title">Apel</h5>
+                      <p class="card-text">Harga : Rp.20.000</p>
+                      <a href="#" class="btn btn-success">Masukkan Keranjang</a>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="card" >
+                    <img src="https://asset.kompas.com/crops/497ymBkWnytTuIXpT1B1ObnWFJM=/36x0:780x496/750x500/data/photo/2017/11/20/2825760274.jpg" class="card-img-top" alt="Wortel">
+                    <div class="card-body">
+                      <h5 class="card-title">Wortel</h5>
+                      <p class="card-text">Harga : Rp.20.000</p>
+                      <a href="#" class="btn btn-success">Masukkan Keranjang</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-3  ">
+                  <div class="card" >
+                    <img src="https://www.kamusdata.com/wp-content/uploads/2018/04/jeruk.jpg" class="card-img-top" alt="Apel">
+                    <div class="card-body">
+                      <h5 class="card-title">Jeruk</h5>
+                      <p class="card-text">Harga : Rp.20.000</p>
+                      <a href="#" class="btn btn-success">Masukkan Keranjang</a>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="card" >
+                    <img src="https://riauaktual.com/application/views/web/berita/4043476656-5-manfaat-sawi-bagi-kesehatan-tubuh-salah-satunya-turunkan-kolesterol-eheo2ixaj7.jpeg" class="card-img-top" alt="Wortel">
+                    <div class="card-body">
+                      <h5 class="card-title">Sawi</h5>
+                      <p class="card-text">Harga : Rp.20.000</p>
+                      <a href="#" class="btn btn-success">Masukkan Keranjang</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-3  ">
+                  <div class="card" >
+                    <img src="https://image-cdn.medkomtek.com/ycG1hr7xHx8AM8d3RVxLocQoe8A=/640x480/smart/klikdokter-media-buckets/medias/2315105/original/010073100_1590046418-Manfaat-Buah-Naga-Merah-shutterstock_301936343.jpg" class="card-img-top" alt="Apel">
+                    <div class="card-body">
+                      <h5 class="card-title">Buah Naga</h5>
+                      <p class="card-text">Harga : Rp.20.000</p>
+                      <a href="#" class="btn btn-success">Masukkan Keranjang</a>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="card" >
+                    <img src="https://static.republika.co.id/uploads/images/inpicture_slide/brokoli-_160217225303-282.jpg" class="card-img-top" alt="Wortel">
+                    <div class="card-body">
+                      <h5 class="card-title">Brokoli</h5>
+                      <p class="card-text">Harga : Rp.20.000</p>
+                      <a href="#" class="btn btn-success">Masukkan Keranjang</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-3  ">
+                  <div class="card" >
+                    <img src="https://www.bantennews.co.id/wp-content/uploads/2019/09/Screenshot_2019-09-24-23-48-36-251_org.detikcom.rss_.jpg" class="card-img-top" alt="Apel">
+                    <div class="card-body">
+                      <h5 class="card-title">Pepaya</h5>
+                      <p class="card-text">Harga : Rp.20.000</p>
+                      <a href="#" class="btn btn-success">Masukkan Keranjang</a>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="card" >
+                    <img src="https://i0.wp.com/agrotek.id/wp-content/uploads/2020/08/Cara-Penanganan-Pasca-Panen-Tanaman-Buncis.jpg?fit=670%2C450&ssl=1" class="card-img-top" alt="Wortel">
+                    <div class="card-body">
+                      <h5 class="card-title">Buncis</h5>
+                      <p class="card-text">Harga : Rp.20.000</p>
+                      <a href="#" class="btn btn-success">Masukkan Keranjang</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid footer">
+            <div class="row">
+              <div class="col-4">
+                <br>
+                <h1>Lokasi</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum ut veritatis totam maxime a doloribus.</p>
+              </div>
+
+              <div class="col-4">
+                <br>
+                <h1>Hubungi Kami :</h1>
+              </div>
+
+              <div class="col-4">
+                <br>
+                <h1>Hallo</h1>
+              </div>
+            </div>
+          </div>
+    
+<script src="vendor/bootstrap-5.2.0-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
