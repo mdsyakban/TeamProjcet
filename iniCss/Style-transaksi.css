@@ -27,7 +27,6 @@ img{
     float: right;
     border-radius: 10px;
 }
-
 .detail-transaksi{
     font-weight: bold;
     text-align: right;
@@ -38,5 +37,38 @@ img{
 .mt-belanja{
     padding-top: 10px;
 }
+.img-card{
+   width: 35%;
+   float: left;
+   margin-left: 30%;
+}
 
+.input{
+    background: #FFF;
+    box-shadow: 0px 0px 94px -30px rgba(0, 0, 0, 0.15);
+    border-radius: 28px;
+    /* padding: 20px 0; */
+    margin-bottom: 20px;
+}
+.input label{
+    display: block;
+    font-size: 18px;
+    /* font-weight: 600; */
+    color: black;
+    /* margin-bottom: 20px; */
+}
+.input input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(0, 255, 255);
+    width: 90%;
+    text-align: center;
+    font-size: 17px;
+}
+/* .box{
+    margin-top: 10%;
+    text-align: center;
+    width: 50;
+} */
+    
 
