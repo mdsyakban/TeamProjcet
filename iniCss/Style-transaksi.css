@@ -1,11 +1,11 @@
-.colorfont{
+.font{
     color : black;
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 23px;
     
 }
-.sub-colorfont{
+.sub-font{
     color: rgb(130, 130, 130);
     font-weight: bold;
 }
@@ -16,7 +16,6 @@
 }
 .jml-total{
     margin-top: -20px;
-    /* border-right: 1px solid blue; */
 }
 
 img{
@@ -35,11 +34,9 @@ img{
     padding-top: 7px;
     
 }
-/* .tamp-detail-transaksi{
-    width: 70%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-} */
+
+.mt-belanja{
+    padding-top: 10px;
+}
 
 

@@ -6,21 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/iniCss/Style-transaksi.css">
     <link rel="stylesheet" href="/vendor/bootstrap-5.2.0-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>Transaksi</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+          <span class="navbar-brand">TERRA</span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Produk
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Sayur</a></li>
+                  <li><a class="dropdown-item" href="#">Buah-Buahan</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Keranjang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Transaksi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/iniHtml/Login.html">Akun</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
    <div class="container">
         <div class="row background mt-3">
             <div class="col-2">
                 <img src="https://jovee.id/wp-content/uploads/2020/10/manfaat_buah_jeruk_1.jpg" alt="gambar">  
             </div>
             <div class="col-6" >
-                <p class="colorfont head-font">Jeruk Mandarin</p>
-                <p class="sub-colorfont jml-total">Jumlah Barang x Rp 00.000</p>
+                <p class="font head-font">Jeruk Mandarin</p>
+                <p class="sub-font jml-total">Jumlah Barang x Rp 00.000</p>
             </div>
             <div class="col-4">
-                <p class="sub-colorfont">Total Belanja</p>
-                <p class="colorfont jml-total">Rp 00.000</p>
+                <p class="sub-font">Total Belanja</p>
+                <p class="font jml-total">Rp 00.000</p>
             </div>
             <div class="col-md-2 offset-md-6">
                 <p class="detail-transaksi"><a href="detail-transaksi.html" style="text-decoration:none; color: green; "> Lihat Detail Transaksi</a></p>
@@ -35,12 +74,12 @@
                 <img src="https://jovee.id/wp-content/uploads/2020/10/manfaat_buah_jeruk_1.jpg" alt="gambar">  
             </div>
             <div class="col-6" >
-                <p class="colorfont head-font">Jeruk Mandarin</p>
-                <p class="sub-colorfont jml-total">Jumlah Barang x Rp 00.000</p>
+                <p class="font head-font">Jeruk Mandarin</p>
+                <p class="sub-font jml-total">Jumlah Barang x Rp 00.000</p>
             </div>
             <div class="col-4">
-                <p class="sub-colorfont">Total Belanja</p>
-                <p class="colorfont jml-total">Rp 00.000</p>
+                <p class="sub-font">Total Belanja</p>
+                <p class="font jml-total">Rp 00.000</p>
             </div>
             <div class="col-md-2 offset-md-6">
                 <p class="detail-transaksi"><a href="detail-transaksi.html" style="text-decoration:none; color: green; "> Lihat Detail Transaksi</a></p>
@@ -50,7 +89,31 @@
                 </div>
         </div>
 
+        <footer>
+            <section class="">
+              <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                  <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                      <i class="fas fa-gem  text-grayish"></i>Location
+                    </h6>
+                    <p>
+                      Here you can use rows and columns to organize your footer content. Lorem ipsum
+                      dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                  </div>
     
+          <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="bi bi-whatsapp"></i> 085237309784</p>
+            <p><i class="bi bi-envelope-fill"></i> terra@gmail.com</p>
+            <p><i class="bi bi-facebook"></i> Terra Fruits and Vegetable</p>
+            <p><i class="bi bi-instagram"></i> @terra_</p>
+          </div>
+                </section>
+          </footer>
+
+          <script src="vendor/bootstrap-5.2.0-dist/js/bootstrap.bundle.js"></script>
    </div>
 </body>
 </html> 
