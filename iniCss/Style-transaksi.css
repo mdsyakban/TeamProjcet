@@ -1,0 +1,45 @@
+.colorfont{
+    color : black;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 23px;
+    
+}
+.sub-colorfont{
+    color: rgb(130, 130, 130);
+    font-weight: bold;
+}
+.background{
+    background-color: rgb(224, 249, 225);
+    border-radius: 10px;
+    padding-top: 10px;
+}
+.jml-total{
+    margin-top: -20px;
+    /* border-right: 1px solid blue; */
+}
+
+img{
+    width: 130px;
+    padding: 5px;
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+    float: right;
+    border-radius: 10px;
+}
+
+.detail-transaksi{
+    font-weight: bold;
+    text-align: right;
+    padding-top: 7px;
+    
+}
+/* .tamp-detail-transaksi{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+
