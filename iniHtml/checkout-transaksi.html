@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/iniCss/Style-transaksi.css">
     <link rel="stylesheet" href="/vendor/bootstrap-5.2.0-dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <title>Transaksi</title>
+    <title>Checkout Transaksi</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -48,46 +48,73 @@
         </div>
       </nav>
 
-   <div class="container">
-        <div class="row background mt-3">
-            <div class="col-2">
-                <img src="https://jovee.id/wp-content/uploads/2020/10/manfaat_buah_jeruk_1.jpg" alt="gambar">  
-            </div>
-            <div class="col-6" >
-                <p class="font head-font">Jeruk Mandarin</p>
-                <p class="sub-font jml-total">Jumlah Barang x Rp 00.000</p>
-            </div>
-            <div class="col-4">
-                <p class="sub-font">Total Belanja</p>
-                <p class="font jml-total">Rp 00.000</p>
-            </div>
-            <div class="col-md-2 offset-md-6">
-                <p class="detail-transaksi"><a href="detail-transaksi.html" style="text-decoration:none; color: green; "> Lihat Detail Transaksi</a></p>
-            </div>
-                <div class="col-2">
-                <button type="button" class="btn btn-success">Beri Ulasan</button>
-                </div>
+      <div class="container">
+        <div class="row">
+          <p class="font" style="text-align: center;">Shoping Card</p>
+
+          <div class="col-6 box">
+            <img class="img-card" src="https://jovee.id/wp-content/uploads/2020/10/manfaat_buah_jeruk_1.jpg" alt="gambar">
+            <p><strong>Jeruk Mandarin</strong></p>
+            <p class="sub-font"> 1 Barang </p>
+            <p class="sub-font"> Rp 00.000 </p>
+          </div>
+          <div class="col-4"> 
+            <div class="content">
+              <div class="input">
+                  <label for="alamat">Alamat</label>
+                  <input type="text" id="alamat">
+                  <label for="penerima">Nama Penerima</label>
+                  <input type="text" id="penerima">
+                  <label for="tlpn">No Telpon</label>
+                  <input type="number" id="tlpn">
+                  <label for="email">Email</label>
+                  <input type="email" id="email">
+              </div>
+          </div>
         </div>
 
-        <div class="row background mt-3">
-            <div class="col-2">
-                <img src="https://jovee.id/wp-content/uploads/2020/10/manfaat_buah_jeruk_1.jpg" alt="gambar">  
-            </div>
-            <div class="col-6" >
-                <p class="font head-font">Jeruk Mandarin</p>
-                <p class="sub-font jml-total">Jumlah Barang x Rp 00.000</p>
-            </div>
-            <div class="col-4">
-                <p class="sub-font">Total Belanja</p>
-                <p class="font jml-total">Rp 00.000</p>
-            </div>
-            <div class="col-md-2 offset-md-6">
-                <p class="detail-transaksi"><a href="detail-transaksi.html" style="text-decoration:none; color: green; "> Lihat Detail Transaksi</a></p>
-                </div>
-                <div class="col-2">
-                <button type="button" class="btn btn-success">Beri Ulasan</button>
-                </div>
+        <div class="row">
+          <div class="col-2">
+            &nbsp;
+          </div>
+          <div class="col-2">
+            <p class="sub-font">SubTotal</p>
+            <p class="sub-font"> Ongkos Kirim </p>
+            <p class="font"> Total </p>
+          </div>
+          <div class="col-2">
+            <p class="sub-font">Rp 00.000</p>
+            <p class="sub-font">Rp 00.000</p>
+            <p class="font"> Rp 00.000 </p>
+          </div>
+          <div class="col-2 sub-font">
+            <input type="radio" id="transfer" name="fav_language" value="transfer">
+            <label for="transfer">Transfer ATM</label><br>
+            <input type="radio" id="briva" name="fav_language" value="briva">
+            <label for="briva">Pembayaran Briva</label><br>
+            <input type="radio" id="dompet_digital" name="fav_language" value="dompet_digital">
+            <label for="dompet_digital">Dompet Digital</label>
+
+          </div>
+          <div class="col-2 sub-font">
+            <input type="radio" id="transfer" name="fav_language" value="transfer">
+            <label for="transfer">JNE Express</label><br>
+            <input type="radio" id="briva" name="fav_language" value="briva">
+            <label for="briva">JNT Express</label><br>
+            <input type="radio" id="dompet_digital" name="fav_language" value="dompet_digital">
+            <label for="dompet_digital">Anter Aja</label> <br>
+            <input type="radio" id="dompet_digital" name="fav_language" value="dompet_digital">
+            <label for="dompet_digital">Gojek</label> <br>
+            <input type="radio" id="dompet_digital" name="fav_language" value="dompet_digital">
+            <label for="dompet_digital">Grap</label> <br>
+            
+          </div>
         </div>
+
+        <button type="button" class="btn btn-success">Bayar</button>
+
+      </div>
+
 
         <footer>
             <section class="">
