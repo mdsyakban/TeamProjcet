@@ -27,3 +27,9 @@ font-size: 20px;
 .card-body{
     text-align: center;
 }
+#Buah{
+    color: black;
+    font-weight: bold; 
+    font-size: 30px;
+    text-align: center;
+}
