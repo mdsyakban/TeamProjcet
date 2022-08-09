@@ -19,22 +19,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/index.html">Beranda</a>
+            <a class="nav-link" aria-current="page" href="/index.html">Beranda</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Produk
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Sayur.html">Sayur</a></li>
-              <li><a class="dropdown-item" href="buah.html">Buah-Buahan</a></li>
+              <li><a class="dropdown-item" href="/iniHtml/Sayur.html">Sayur</a></li>
+              <li><a class="dropdown-item" href="/iniHtml/buah.html">Buah-Buahan</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Keranjang</a>
+            <a class="nav-link" href="keranjang.html">Keranjang</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="List_transaksi.html">Transaksi</a>
+            <a class="nav-link active" href="List_transaksi.html">Transaksi</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Login.html">Akun</a>
@@ -48,99 +48,147 @@
     </div>
   </nav>
 
-      <div class="container">
-        <div class="row">
-          <p class="font" style="text-align: center;">Shoping Card</p>
+   <div class="container">
+    <div class="py-5 text-center">
+      <h2>Checkout form</h2>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Your cart</span>
+          <span class="badge badge-secondary badge-pill">3</span>
+        </h4>
 
-          <div class="col-6 box">
-            <img class="img-card" src="https://jovee.id/wp-content/uploads/2020/10/manfaat_buah_jeruk_1.jpg" alt="gambar">
-            <p><strong>Jeruk Mandarin</strong></p>
-            <p class="sub-font"> 1 Barang </p>
-            <p class="sub-font"> Rp 00.000 </p>
-          </div>
-          <div class="col-4"> 
-            <div class="content">
-              <div class="input">
-                  <label for="alamat">Alamat</label>
-                  <input type="text" id="alamat">
-                  <label for="penerima">Nama Penerima</label>
-                  <input type="text" id="penerima">
-                  <label for="tlpn">No Telpon</label>
-                  <input type="number" id="tlpn">
-                  <label for="email">Email</label>
-                  <input type="email" id="email">
-              </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-2">
-            &nbsp;
-          </div>
-          <div class="col-2">
-            <p class="sub-font">SubTotal</p>
-            <p class="sub-font"> Ongkos Kirim </p>
-            <p class="font"> Total </p>
-          </div>
-          <div class="col-2">
-            <p class="sub-font">Rp 00.000</p>
-            <p class="sub-font">Rp 00.000</p>
-            <p class="font"> Rp 00.000 </p>
-          </div>
-          <div class="col-2 sub-font">
-            <input type="radio" id="transfer" name="fav_language" value="transfer">
-            <label for="transfer">Transfer ATM</label><br>
-            <input type="radio" id="briva" name="fav_language" value="briva">
-            <label for="briva">Pembayaran Briva</label><br>
-            <input type="radio" id="dompet_digital" name="fav_language" value="dompet_digital">
-            <label for="dompet_digital">Dompet Digital</label>
-
-          </div>
-          <div class="col-2 sub-font">
-            <input type="radio" id="transfer" name="fav_language" value="transfer">
-            <label for="transfer">JNE Express</label><br>
-            <input type="radio" id="briva" name="fav_language" value="briva">
-            <label for="briva">JNT Express</label><br>
-            <input type="radio" id="dompet_digital" name="fav_language" value="dompet_digital">
-            <label for="dompet_digital">Anter Aja</label> <br>
-            <input type="radio" id="dompet_digital" name="fav_language" value="dompet_digital">
-            <label for="dompet_digital">Gojek</label> <br>
-            <input type="radio" id="dompet_digital" name="fav_language" value="dompet_digital">
-            <label for="dompet_digital">Grap</label> <br>
-            
-          </div>
-        </div>
-
-        <button type="button" class="btn btn-success">Bayar</button>
-
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Product name</h6>
+              <small class="text-muted">Jumlah</small>
+            </div>
+            <span class="text-muted">Rp </span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Second product</h6>
+              <small class="text-muted">Jumlah</small>
+            </div>
+            <span class="text-muted">Rp </span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Ongkir</h6>
+              <small class="text-muted">Jumlah</small>
+            </div>
+            <span class="text-muted">Rp </span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total Belanja</span>
+            <strong>Rp</strong>
+          </li>
+        </ul>
       </div>
 
-
-        <footer>
-            <section class="">
-              <div class="container text-center text-md-start mt-5">
-                <div class="row mt-3">
-                  <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
-                    <h6 class="text-uppercase fw-bold mb-4">
-                      <i class="fas fa-gem  text-grayish"></i>Location
-                    </h6>
-                    <p>
-                      Here you can use rows and columns to organize your footer content. Lorem ipsum
-                      dolor sit amet, consectetur adipisicing elit.
-                    </p>
-                  </div>
-    
-          <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
-            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="bi bi-whatsapp"></i> 085237309784</p>
-            <p><i class="bi bi-envelope-fill"></i> terra@gmail.com</p>
-            <p><i class="bi bi-facebook"></i> Terra Fruits and Vegetable</p>
-            <p><i class="bi bi-instagram"></i> @terra_</p>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Form Alamat</h4>
+        <form class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="penerima">Nama Penerima</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="penerima" placeholder="Penerima" required>
+              <div class="invalid-feedback" style="width: 100%;">
+                Your penerima is required.
+              </div>
+            </div>
           </div>
-                </section>
-          </footer>
+  
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="nlpn">No Telpon</label>
+            <input type="number" class="form-control" id="tlpn" placeholder="081.....">
+          </div>
+  
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">Jenis Pengiriman</label>
+              <select class="custom-select d-block w-100" id="country" required>
+                <option value="">Pilih...</option>
+                <option>JNT Express</option>
+                <option>JNE Express</option>
+                <option>Anter Aja</option>
+                <option>Pos Indonesia</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+  
+          <h4 class="mb-3">Metode Pembayaran</h4>
+  
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+              <label class="custom-control-label" for="credit">Transfer Bank</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="debit">Pembayaran Briva</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="paypal">Dompet Digital</label>
+            </div>
+          </div>
+          <hr class="mb-4">
+        </form>
+        <button class="btn btn-success btn-lg btn-block" type="submit">Continue to checkout</button>  
+      </div>
+    </div>
+  </div>
 
-          <script src="vendor/bootstrap-5.2.0-dist/js/bootstrap.bundle.js"></script>
-   </div>
-</body>
+  <footer>
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem  text-grayish"></i>Location
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+
+  <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
+    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+    <p><i class="bi bi-whatsapp"></i> 085237309784</p>
+    <p><i class="bi bi-envelope-fill"></i> terra@gmail.com</p>
+    <p><i class="bi bi-facebook"></i> Terra Fruits and Vegetable</p>
+    <p><i class="bi bi-instagram"></i> @terra_</p>
+  </div>
+        </section>
+  </footer>
+
+  <script src="/vendor/bootstrap-5.2.0-dist/js/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+  </body>
 </html> 
