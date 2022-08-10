@@ -18,3 +18,16 @@ background-color: black;
     font-family: calibri;
     font-size: 20px;
 }
+
+.card-img-top {
+    min-height: 200px;
+    max-height: 300px;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.button{
+    margin-bottom: 2px;
+}
