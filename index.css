@@ -20,8 +20,12 @@ background-color: black;
 }
 
 .card-img-top {
-    min-height: 200px;
-    max-height: 300px;
+    min-height: 150px;
+    max-height: 150px;
+}
+
+.card-text {
+    font-size: 15px;
 }
 
 .card-body{
