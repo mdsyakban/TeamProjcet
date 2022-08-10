@@ -2,7 +2,7 @@ let cardContainer = document.getElementById("container-card")
 
 console.log(cardContainer);
 
-fetch('https://childish-jumpy-kitten.glitch.me/sayur')
+fetch('https://childish-jumpy-kitten.glitch.me/buah')
 .then((response) => response.json())
 .then((data) => {
     console.log(data)
@@ -15,7 +15,7 @@ fetch('https://childish-jumpy-kitten.glitch.me/sayur')
             <h5 class="card-title">${element.name}</h5>
             <p class="card-text">Harga : ${element.harga} (kg)</p>
             <p class="stok">Stok: ${element.stok}</p>
-            <a href="#" class="col-12 btn btn-success button" id="btn-keranjang">+Keranjang</a>
+            <a href="#" class="col-12 btn btn-success button">+Keranjang</a>
             <a href="#" class="col-12 btn btn-success button">Beli Langsung</a>
             </div>
             </div>
@@ -23,5 +23,3 @@ fetch('https://childish-jumpy-kitten.glitch.me/sayur')
         `
     });
 });
-
-
