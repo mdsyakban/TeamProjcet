@@ -1,5 +1,6 @@
 let cardContainer = document.getElementById("container-card")
 let cart = []
+const isiLocalStorageCartBuah = localStorage.getItem('cart-buah')
 
 let addToCart = (id) => {
   let objectBuahLocalStorage = JSON.parse(localStorage.getItem("buah"))
@@ -10,10 +11,18 @@ let addToCart = (id) => {
     return buah.id === Number(id)
   })
   
+  if (isiLocalStorageCartBuah === null) {
+    cart.push(foundBuah)
+    localStorage.setItem("cart-buah", JSON.stringify(cart))
+    alert("Berhasil Dimasukkan ke Keranjang")
+  } else {
+    cart = JSON.parse(isiLocalStorageCartBuah)
   cart.push(foundBuah)
   localStorage.setItem("cart-buah", JSON.stringify(cart))
   alert("Berhasil Dimasukkan ke Keranjang")
+  }
 }
+
 
 fetch('https://childish-jumpy-kitten.glitch.me/buah')
 .then((response) => response.json())
@@ -22,7 +31,6 @@ fetch('https://childish-jumpy-kitten.glitch.me/buah')
     localStorage.setItem('buah', JSON.stringify(data))
 
 
-    console.log(data)
     data.forEach(element => {
         cardContainer.innerHTML += `
         <div class="col-12 col-sm-6 col-md-3 py-3">

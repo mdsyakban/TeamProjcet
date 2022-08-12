@@ -1,5 +1,6 @@
 let cardContainer = document.getElementById("container-card")
 let cart = []
+const isiLocalStorageCartSayur = localStorage.getItem('cart-sayur')
 
 let addToCart = (id) => {
   let objectSayurLocalStorage = JSON.parse(localStorage.getItem("sayur"))
@@ -9,10 +10,17 @@ let addToCart = (id) => {
   let foundSayur = objectSayurLocalStorage.find( sayur => {
     return sayur.id === Number(id)
   })
-  
-  cart.push(foundSayur)
-  localStorage.setItem("cart-sayur", JSON.stringify(cart))
-  alert("Berhasil Dimasukkan ke Keranjang")
+
+  if (isiLocalStorageCartSayur === null) {
+    cart.push(foundSayur)
+    localStorage.setItem("cart-sayur", JSON.stringify(cart))
+    alert("Berhasil Dimasukkan ke Keranjang")
+  } else {
+    cart = JSON.parse(isiLocalStorageCartSayur)
+    cart.push(foundSayur)
+    localStorage.setItem("cart-sayur", JSON.stringify(cart))
+    alert("Berhasil Dimasukkan ke Keranjang")
+  }
 }
 
 
@@ -45,9 +53,6 @@ fetch('https://childish-jumpy-kitten.glitch.me/sayur')
     
     button_carts.forEach(button => {
         button.addEventListener("click", (e) => addToCart(button.id))
-        // button_carts.preventDefault();
     })
 
 });
-
-
