@@ -12,6 +12,7 @@ let addToCart = (id) => {
   
   cart.push(foundBuah)
   localStorage.setItem("cart-buah", JSON.stringify(cart))
+  alert("Berhasil Dimasukkan ke Keranjang")
 }
 
 fetch('https://childish-jumpy-kitten.glitch.me/buah')
