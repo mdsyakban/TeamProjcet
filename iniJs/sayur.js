@@ -12,6 +12,7 @@ let addToCart = (id) => {
   
   cart.push(foundSayur)
   localStorage.setItem("cart-sayur", JSON.stringify(cart))
+  alert("Berhasil Dimasukkan ke Keranjang")
 }
 
 
