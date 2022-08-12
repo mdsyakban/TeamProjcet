@@ -1,11 +1,27 @@
 let cardContainer = document.getElementById("container-card")
+let cart = []
 
-console.log(cardContainer);
+let addToCart = (id) => {
+  let objectSayurLocalStorage = JSON.parse(localStorage.getItem("sayur"))
+   // ngambil dari local storage dengan key sayur
+
+   // mencari obj dengan id yang sama
+  let foundSayur = objectSayurLocalStorage.find( sayur => {
+    return sayur.id === Number(id)
+  })
+  
+  cart.push(foundSayur)
+  localStorage.setItem("cart-sayur", JSON.stringify(cart))
+}
+
 
 fetch('https://childish-jumpy-kitten.glitch.me/sayur')
 .then((response) => response.json())
 .then((data) => {
-    console.log(data)
+    // masukin ke local storage
+    localStorage.setItem('sayur', JSON.stringify(data))
+
+    
     data.forEach(element => {
         cardContainer.innerHTML += `
         <div class="col-12 col-sm-6 col-md-3 py-3">
@@ -15,13 +31,22 @@ fetch('https://childish-jumpy-kitten.glitch.me/sayur')
             <h5 class="card-title">${element.name}</h5>
             <p class="card-text">Harga : ${element.harga} (kg)</p>
             <p class="stok">Stok: ${element.stok}</p>
-            <a href="/iniHtml/keranjang.html" class="col-12 btn btn-success button" id="btn-keranjang">+Keranjang</a>
+            <button class="col-12 btn btn-success button btn-keranjang" id=${element.id}>+Keranjang</button>
             <a href="/iniHtml/checkout-transaksi.html" class="col-12 btn btn-success button">Beli Langsung</a>
             </div>
             </div>
         </div>
         `
     });
+
+    let button_carts = document.querySelectorAll('.btn-keranjang')
+    // loping pakek for each
+    
+    button_carts.forEach(button => {
+        button.addEventListener("click", (e) => addToCart(button.id))
+        // button_carts.preventDefault();
+    })
+
 });
 
 
