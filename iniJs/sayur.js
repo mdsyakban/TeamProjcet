@@ -22,15 +22,12 @@ let addToCart = (id) => {
     alert("Berhasil Dimasukkan ke Keranjang")
   }
 }
-
-
 fetch('https://childish-jumpy-kitten.glitch.me/sayur')
 .then((response) => response.json())
 .then((data) => {
-    // masukin ke local storage
-    localStorage.setItem('sayur', JSON.stringify(data))
 
-    
+    // masukin ke local storage
+    localStorage.setItem('sayur', JSON.stringify(data)) 
     data.forEach(element => {
         cardContainer.innerHTML += `
         <div class="col-12 col-sm-6 col-md-3 py-3">
@@ -44,7 +41,7 @@ fetch('https://childish-jumpy-kitten.glitch.me/sayur')
             <a href="/iniHtml/checkout-transaksi.html" class="col-12 btn btn-success button">Beli Langsung</a>
             </div>
             </div>
-        </div>
+        </div> 
         `
     });
 
