@@ -69,6 +69,20 @@ buttonPlus.addEventListener("click", (e) => {
   harga.innerHTML = `<h5> Rp. ${set} </h5>`;
 })
 
+// Hapus Isi Keranjang
+let hapusIconKeranjang = document.getElementsByClassName('btn-danger')
+// console.log(hapusIconKeranjang)
+
+for (var i = 0; i < hapusIconKeranjang.length; i++) {
+    var button = hapusIconKeranjang[i]
+    button.addEventListener('click', function(event) {
+        // console.log('clicked')
+        var buttonClicked = event.target
+        buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+    })
+}
+
+
 })
 
 //CARD BUAH
@@ -113,24 +127,6 @@ cartBuah.forEach(buah => {
             </div>
           </div>
   `
-})
-
-// let buttonPlus = document.getElementById("plus");
-// let buttonMinus = document.getElementById("minus");
-
-// let quantity = parseInt(document.getElementById("formsayur").value);
-// quantity++;
-
-// buttonPlus.addEventListener("click", (e) => {
-//   e.preventDefault();
-
-//   let harga = document.getElementById(`value-${sayur.id}`);
-
-//   let set = quantity++ * sayur.harga;
-//   harga.innerHTML = `Rp. ${set} (${quantity - 1})`;
-// });
-
-
 // Hapus Isi Keranjang
 let hapusIconKeranjang = document.getElementsByClassName('btn-danger')
 // console.log(hapusIconKeranjang)
@@ -144,14 +140,17 @@ for (var i = 0; i < hapusIconKeranjang.length; i++) {
     })
 }
 
-function updateCartTotal() {
-    let cartItemContainer = document.getElementsByClassName('btn-keranjang')[0]
-    let cartRows = cartItemContainer.getElementsByClassName('card-body')
-    for (var i = 0; i < cartRows.length; i++) {
-        let cartRow = cartRows[i]
-        let priceElement = cartRow.getElementsByClassName('card-price')[0]
-        let quantityElement = cartRow.getElementsByClassName('form1')[0]
 
-        console.log(priceElement, quantityElement)
-    }
-}
+})
+
+// function updateCartTotal() {
+//     let cartItemContainer = document.getElementsByClassName('btn-keranjang')[0]
+//     let cartRows = cartItemContainer.getElementsByClassName('card-body')
+//     for (var i = 0; i < cartRows.length; i++) {
+//         let cartRow = cartRows[i]
+//         let priceElement = cartRow.getElementsByClassName('card-price')[0]
+//         let quantityElement = cartRow.getElementsByClassName('form1')[0]
+
+//         console.log(priceElement, quantityElement)
+//     }
+// }
