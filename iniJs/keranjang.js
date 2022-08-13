@@ -46,7 +46,7 @@ cartSayur.forEach(cart => {
                   <h5 class="mb-0">Rp. ${cart.harga}(8)</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                  <a href="#!" class="text-dark"><i class="bi bi-trash-fill"></i></a>
+                <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
                 </div>
               </div>
             </div>
@@ -89,7 +89,8 @@ cartBuah.forEach(cart => {
                   <h5 class="mb-0">Rp. ${cart.harga}(8)</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                  <a href="#!" class="text-dark"><i class="bi bi-trash-fill"></i></a>
+          
+                <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
                 </div>
               </div>
             </div>
@@ -97,3 +98,26 @@ cartBuah.forEach(cart => {
   `
 })
 
+let hapusIconKeranjang = document.getElementsByClassName('btn-danger')
+// console.log(hapusIconKeranjang)
+
+for (var i = 0; i < hapusIconKeranjang.length; i++) {
+    var button = hapusIconKeranjang[i]
+    button.addEventListener('click', function(event) {
+        // console.log('clicked')
+        var buttonClicked = event.target
+        buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+    })
+}
+
+function updateCartTotal() {
+    let cartItemContainer = document.getElementsByClassName('btn-keranjang')[0]
+    let cartRows = cartItemContainer.getElementsByClassName('card-body')
+    for (var i = 0; i < cartRows.length; i++) {
+        let cartRow = cartRows[i]
+        let priceElement = cartRow.getElementsByClassName('card-price')[0]
+        let quantityElement = cartRow.getElementsByClassName('form1')[0]
+
+        console.log(priceElement, quantityElement)
+    }
+}
