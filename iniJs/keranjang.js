@@ -13,7 +13,7 @@ let cartBuah = JSON.parse(localStorage.getItem('cart-buah'))
     
 // }
 
-cartSayur.forEach(cart => {
+cartSayur.forEach(sayur => {
   // console.log('lagi looping')
   containerCartSayur.innerHTML += `
     <div class="card rounded-3 mb-4" id="btn-keranjang">
@@ -21,29 +21,29 @@ cartSayur.forEach(cart => {
               <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2 col-lg-2 col-xl-2">
                   <img
-                    src=${cart.photo}
+                    src=${sayur.photo}
                     class="img-fluid rounded-3" alt="Cotton T-shirt">
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3">
-                  <p class="lead fw-normal mb-2">${cart.name}</p>
-                  <p><span class="text-muted">Stok: </span>${cart.stok}
+                  <p class="lead fw-normal mb-2">${sayur.name}</p>
+                  <p><span class="text-muted">Stok: </span>${sayur.stok}
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                  <button class="btn btn-link px-2"
+                  <button class="btn btn-link px-2" id="minus"
                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                     <i class="bi bi-dash"></i>
                   </button>
   
-                  <input id="form1" min="0" name="quantity" value="1" type="number"
+                  <input id="formsayur" min="1" name="quantity" value="1" type="number"
                     class="form-control form-control-sm" />
   
-                  <button class="btn btn-link px-2"
+                  <button class="btn btn-link px-2" id="plus" 
                     onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                     <i class="bi bi-plus"></i>
                   </button>
                 </div>
-                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                  <h5 class="mb-0">Rp. ${cart.harga}(8)</h5>
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" id="value-${sayur.id}">
+                  <h5 class="mb-0">Rp. ${sayur.harga}</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                 <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
@@ -51,12 +51,29 @@ cartSayur.forEach(cart => {
               </div>
             </div>
           </div>
-  `
+  ` 
+
+let buttonPlus = document.getElementById("plus");
+let buttonMinus = document.getElementById("minus");
+
+
+let quantity = parseInt(document.getElementById("formsayur").value);
+
+
+buttonPlus.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  let harga = document.getElementById(`value-${sayur.id}`);
+
+  let set = quantity++ * sayur.harga;
+  harga.innerHTML = `<h5> Rp. ${set} </h5>`;
+})
+
 })
 
 //CARD BUAH
 
-cartBuah.forEach(cart => {
+cartBuah.forEach(buah => {
   // console.log('lagi looping')
   containerCartBuah.innerHTML += `
     <div class="card rounded-3 mb-4" id="btn-keranjang">
@@ -64,12 +81,12 @@ cartBuah.forEach(cart => {
               <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2 col-lg-2 col-xl-2">
                   <img
-                    src=${cart.photo}
+                    src=${buah.photo}
                     class="img-fluid rounded-3" alt="Cotton T-shirt">
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3">
-                  <p class="lead fw-normal mb-2">${cart.name}</p>
-                  <p><span class="text-muted">Stok: </span>${cart.stok}
+                  <p class="lead fw-normal mb-2">${buah.name}</p>
+                  <p><span class="text-muted">Stok: </span>${buah.stok}
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                   <button class="btn btn-link px-2"
@@ -86,7 +103,7 @@ cartBuah.forEach(cart => {
                   </button>
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                  <h5 class="mb-0">Rp. ${cart.harga}(8)</h5>
+                  <h5 class="mb-0">Rp. ${buah.harga}</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
           
@@ -98,6 +115,23 @@ cartBuah.forEach(cart => {
   `
 })
 
+// let buttonPlus = document.getElementById("plus");
+// let buttonMinus = document.getElementById("minus");
+
+// let quantity = parseInt(document.getElementById("formsayur").value);
+// quantity++;
+
+// buttonPlus.addEventListener("click", (e) => {
+//   e.preventDefault();
+
+//   let harga = document.getElementById(`value-${sayur.id}`);
+
+//   let set = quantity++ * sayur.harga;
+//   harga.innerHTML = `Rp. ${set} (${quantity - 1})`;
+// });
+
+
+// Hapus Isi Keranjang
 let hapusIconKeranjang = document.getElementsByClassName('btn-danger')
 // console.log(hapusIconKeranjang)
 
