@@ -8,10 +8,31 @@ masuk.addEventListener("click", (e) => {
     let nama = document.getElementById("nama").value
     let password = document.getElementById("password").value
 
-    console.log(nama)
+    let inputUsername=false, inputPassword=false; 
+    if(nama === '') {
+        document.getElementById("username-error").innerHTML = 'Tidak Boleh Kosong';
+    }else {
+        document.getElementById("username-error").innerHTML = '';
+        inputUsername=true;
+    }
+
+    if(password === '') {
+        document.getElementById("password-error").innerHTML = 'Tidak Boleh Kosong';
+    }else {
+        document.getElementById("password-error").innerHTML = '';
+        inputPassword=true;
+    }
+
+    if (inputUsername ==! '' && inputPassword ==! '') {
+        alert("Login berhasil")
+    } else {
+        alert("Login gagal")
+    }
+
+    // console.log(nama)
     
 
-    alert("berhasil Login")
+    // alert("berhasil Login")
     simpanData()
 })
 function simpanData() {
@@ -27,4 +48,3 @@ function simpanData() {
         let Login = JSON.stringify(HasilLogin);
         localStorage.setItem("login", Login);
     }
-   
