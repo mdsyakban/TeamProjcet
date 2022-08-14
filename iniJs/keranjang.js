@@ -4,14 +4,38 @@ let cartSayur = JSON.parse(localStorage.getItem('cart-sayur'))
 
 let containerCartBuah = document.getElementById('container-cartBuah')
 let cartBuah = JSON.parse(localStorage.getItem('cart-buah'))
-// console.log(cartSayur);
 
+const subtotalCount = () => {
+  let subtotal = 0
+  let eachTotal = document.querySelectorAll('.sub-total')
+  let listTotal = document.getElementById('subtotal')
+  eachTotal.forEach(subTotal  => {
+    subtotal += Number(subTotal.textContent)
+  })
+  listTotal.textContent = subtotal
+}
 // buttonKeranjang.addEventListener("onclick", displayDate);
 // function displayDate() {
     
 // }
 
-cartSayur.forEach(sayur => {
+const convert = (arr) => {
+  const res = {};
+  arr.forEach((obj) => {
+    const key = `${obj.id}`;
+    if (!res[key]) {
+      res[key] = { ...obj, count: 0 };
+    }
+    res[key].count += 1;
+  });
+  return Object.values(res);
+};
+
+let reduceSayur = convert(cartSayur)
+
+console.log(reduceSayur);
+
+reduceSayur.forEach(sayur => {
   // console.log('lagi looping')
   containerCartSayur.innerHTML += `
     <div class="card rounded-3 mb-4" id="keranjang">
@@ -27,21 +51,21 @@ cartSayur.forEach(sayur => {
                   <p><span class="text-muted">Stok: </span>${sayur.stok}
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                  <button class="btn btn-link px-2" id="minus"
+                  <button class="btn btn-link px-2" id="minus" name="value-${sayur.id}"
                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                     <i class="bi bi-dash"></i>
                   </button>
   
-                  <input id="formsayur" min="1" name="quantity" value="1" type="number"
+                  <input id="formsayur" min="1" name="quantity" value="${sayur.count}" type="number"
                     class="form-control form-control-sm" />
   
-                  <button class="btn btn-link px-2" id="plus" 
+                  <button class="btn btn-link px-2" id="plus" name="value-${sayur.id}"
                     onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                     <i class="bi bi-plus"></i>
                   </button>
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" id="value-${sayur.id}">
-                  <h5 class="mb-0 total-rincianbarang">${sayur.harga}</h5>
+                  <span>Rp. </span><h5 class="mb-0 total-rincianbarang sub-total" id="value-${sayur.id}_${sayur.harga}">${sayur.harga}</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                 <button type="button" class="btn btn-danger" id="buttonHapus"><i class="bi bi-trash-fill"></i></button>
@@ -67,9 +91,30 @@ cartSayur.forEach(sayur => {
         if (total.id.split("_")[0] === element.name) {
           total.textContent = Number(total.textContent) + Number(total.id.split("_")[1]);
         }
+        subtotalCount()
       });
     });
   });
+
+  minusbutton.forEach((element) => {
+    element.addEventListener("click", function (event) {
+      let quantityFind = document.querySelectorAll(`.total-rincianbarang`);
+      quantityFind.forEach((quantity) => {
+        if (quantity.name === element.name) {
+          quantity.value = Number(quantity.value) - 1;
+          totalHarga = [];
+        }
+      });
+      totalHargaSayur.forEach((total) => {
+        if (total.id.split("_")[0] === element.name) {
+          total.textContent = Number(total.textContent) - Number(total.id.split("_")[1]);
+        }
+      });
+      subtotalCount()
+    });
+  });
+
+  
 
   //Hapus Local Storage
   let hapusButton = document.querySelector('#buttonHapus');
@@ -86,12 +131,15 @@ cartSayur.forEach(sayur => {
   function refresh() {
     window.location.reload();
   }
-} 
+  subtotalCount() 
+}
 })
 
 //CARD BUAH
 
-cartBuah.forEach(buah => {
+let reduceBuah = convert(cartBuah)
+
+reduceBuah.forEach(buah => {
   // console.log('lagi looping')
   containerCartBuah.innerHTML += `
     <div class="card rounded-3 mb-4" id="keranjangBuah">
@@ -107,21 +155,21 @@ cartBuah.forEach(buah => {
                   <p><span class="text-muted">Stok: </span>${buah.stok}
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                  <button class="btn btn-link px-2"
+                  <button class="btn btn-link px-2 minusBuah" name="value-${buah.id}"
                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                     <i class="bi bi-dash"></i>
                   </button>
   
-                  <input id="form1" min="0" name="quantity" value="1" type="number"
+                  <input id="form1" min="0" name="quantity" value="${buah.count}" type="number"
                     class="form-control form-control-sm" />
   
-                  <button class="btn btn-link px-2"
+                  <button class="btn btn-link px-2 plusBuah" name="value-${buah.id}"
                     onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                     <i class="bi bi-plus"></i>
                   </button>
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                  <h5 class="mb-0">Rp. ${buah.harga}</h5>
+                  <span>Rp. </span> <h5 class="mb-0 total-rincianbarangBuah sub-total" id="value-${buah.id}_${buah.harga}">${buah.harga}</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
           
@@ -131,7 +179,48 @@ cartBuah.forEach(buah => {
             </div>
           </div>
   `
+
+  let plusbutton = document.querySelectorAll(`.plusBuah`);
+  let minusbutton = document.querySelectorAll(".minusBuah");
+  let totalHargaBuah = document.querySelectorAll(".total-rincianbarangBuah");
+
+  plusbutton.forEach((element) => {
+    element.addEventListener("click", function (event) {
+      let quantityFind = document.querySelectorAll(`.total-rincianbarang`);
+      quantityFind.forEach((quantity) => {
+        if (quantity.name === element.name) {
+          quantity.value = Number(quantity.value) + 1;
+          totalHarga = [];
+        }
+      });
+      totalHargaBuah.forEach((total) => {
+        if (total.id.split("_")[0] === element.name) {
+          total.textContent = Number(total.textContent) + Number(total.id.split("_")[1]);
+        }
+        subtotalCount()
+      });
+    });
+  });
+
+  minusbutton.forEach((element) => {
+    element.addEventListener("click", function (event) {
+      let quantityFind = document.querySelectorAll(`.total-rincianbarang`);
+      quantityFind.forEach((quantity) => {
+        if (quantity.name === element.name) {
+          quantity.value = Number(quantity.value) - 1;
+          totalHarga = [];
+        }
+      });
+      totalHargaBuah.forEach((total) => {
+        if (total.id.split("_")[0] === element.name) {
+          total.textContent = Number(total.textContent) - Number(total.id.split("_")[1]);
+        }
+        subtotalCount()
+      });
+    });
+  });
 //Hapus Local Storage
+
 let hapusButtonBuah = document.querySelector('#buttonHapusBuah');
 let hapusBuah = document.querySelector('#keranjangBuah');
 
@@ -147,6 +236,7 @@ function refresh() {
   window.location.reload();
 }
 } 
+subtotalCount() 
 })
 
 
@@ -160,27 +250,27 @@ namanama = [];
 let jumlah = document.getElementById("jumlahbarangsemua");
 let total = document.getElementById("totalpembayaransemua");
 
-let jumlahSayur = parseInt(document.getElementById("jumlahbarang").innerHTML);
-let jumlahBuah = parseInt(document.getElementById("jumlahbarang1").innerHTML);
+// let jumlahSayur = parseInt(document.getElementById("jumlahbarang").innerHTML);
+// let jumlahBuah = parseInt(document.getElementById("jumlahbarang1").innerHTML);
 
-let totalsayur = parseInt(document.getElementById("totalpembayaran").innerHTML);
-let totalbuah = parseInt(document.getElementById("totalpembayaran1").innerHTML);
+// let totalsayur = parseInt(document.getElementById("totalpembayaran").innerHTML);
+// let totalbuah = parseInt(document.getElementById("totalpembayaran1").innerHTML);
 
 // console.log(totalbuah);
 
-jumlah.textContent = jumlahSayur + jumlahBuah;
-total.textContent = totalsayur + totalbuah;
+// jumlah.textContent = jumlahSayur + jumlahBuah;
+// total.textContent = totalsayur + totalbuah;
 
-let tombol = document.getElementById("tombol");
-let jumlah1 = parseInt(document.getElementById("jumlahbarangsemua").innerHTML);
-let total1 = parseInt(document.getElementById("totalpembayaransemua").innerHTML);
+// let tombol = document.getElementById("tombol");
+// let jumlah1 = parseInt(document.getElementById("jumlahbarangsemua").innerHTML);
+// let total1 = parseInt(document.getElementById("totalpembayaransemua").innerHTML);
 
-tombol.addEventListener("click", (e) => {
-  let TotalHarga = {
-    Key: "0",
-    harga: total1,
-    jumlah: jumlah1,
-  };
-  dataHarga.push(TotalHarga);
-  localStorage.setItem("totalharga", JSON.stringify(dataHarga));
-});
+// tombol.addEventListener("click", (e) => {
+//   let TotalHarga = {
+//     Key: "0",
+//     harga: total1,
+//     jumlah: jumlah1,
+//   };
+//   dataHarga.push(TotalHarga);
+//   localStorage.setItem("totalharga", JSON.stringify(dataHarga));
+// });
