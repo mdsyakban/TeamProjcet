@@ -41,7 +41,7 @@ function simpanData() {
         let hasil = {
             Key: "0",
             nama: nama.value,
-            Password: password.value,
+            password: password.value,
         };
         HasilLogin.push(hasil);
         console.log(HasilLogin)

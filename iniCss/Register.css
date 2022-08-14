@@ -11,6 +11,10 @@ body {
 	padding: 20px;
 }
 
+span {
+	color: red;
+}
+
 
 @media screen and (max-width: 900px) {
 		.col-sm {
