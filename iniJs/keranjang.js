@@ -1,10 +1,8 @@
 // let buttonKeranjang = document.getElementById("btn-keranjang")
 let containerCartSayur = document.getElementById('container-cartSayur')
-
-let containerCartBuah = document.getElementById('container-cartBuah')
-
 let cartSayur = JSON.parse(localStorage.getItem('cart-sayur'))
 
+let containerCartBuah = document.getElementById('container-cartBuah')
 let cartBuah = JSON.parse(localStorage.getItem('cart-buah'))
 // console.log(cartSayur);
 
@@ -16,7 +14,7 @@ let cartBuah = JSON.parse(localStorage.getItem('cart-buah'))
 cartSayur.forEach(sayur => {
   // console.log('lagi looping')
   containerCartSayur.innerHTML += `
-    <div class="card rounded-3 mb-4" id="btn-keranjang">
+    <div class="card rounded-3 mb-4" id="keranjang">
             <div class="card-body p-4">
               <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2 col-lg-2 col-xl-2">
@@ -43,46 +41,32 @@ cartSayur.forEach(sayur => {
                   </button>
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" id="value-${sayur.id}">
-                  <h5 class="mb-0">Rp. ${sayur.harga}</h5>
+                  <h5 class="mb-0">${sayur.harga}</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                <button type="button" class="btn btn-danger" id="buttonHapus"><i class="bi bi-trash-fill"></i></button>
                 </div>
               </div>
             </div>
           </div>
-  ` 
+  `
 
-let buttonPlus = document.getElementById("plus");
-let buttonMinus = document.getElementById("minus");
+  //Hapus Local Storage
+  let hapusButton = document.querySelector('#buttonHapus');
+  let hapusSayur = document.querySelector('#keranjang');
 
+  hapusButton.onclick = function () {
+    alert("Data Sudah dihapus");
+    hapusSayur.remove();
+    const items = JSON.parse(localStorage.getItem("cart-sayur"));
+    const filtered = items.filter((item) => item.id !== sayur.id);
+    localStorage.setItem("cart-sayur", JSON.stringify(filtered));
+    refresh();
 
-let quantity = parseInt(document.getElementById("formsayur").value);
-
-
-buttonPlus.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  let harga = document.getElementById(`value-${sayur.id}`);
-
-  let set = quantity++ * sayur.harga;
-  harga.innerHTML = `<h5> Rp. ${set} </h5>`;
-})
-
-// Hapus Isi Keranjang
-let hapusIconKeranjang = document.getElementsByClassName('btn-danger')
-// console.log(hapusIconKeranjang)
-
-for (var i = 0; i < hapusIconKeranjang.length; i++) {
-    var button = hapusIconKeranjang[i]
-    button.addEventListener('click', function(event) {
-        // console.log('clicked')
-        var buttonClicked = event.target
-        buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
-    })
-}
-
-
+  function refresh() {
+    window.location.reload();
+  }
+} 
 })
 
 //CARD BUAH
@@ -90,7 +74,7 @@ for (var i = 0; i < hapusIconKeranjang.length; i++) {
 cartBuah.forEach(buah => {
   // console.log('lagi looping')
   containerCartBuah.innerHTML += `
-    <div class="card rounded-3 mb-4" id="btn-keranjang">
+    <div class="card rounded-3 mb-4" id="keranjangBuah">
             <div class="card-body p-4">
               <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2 col-lg-2 col-xl-2">
@@ -121,36 +105,27 @@ cartBuah.forEach(buah => {
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
           
-                <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                <button type="button" class="btn btn-danger" id="buttonHapusBuah"><i class="bi bi-trash-fill"></i></button>
                 </div>
               </div>
             </div>
           </div>
   `
-// Hapus Isi Keranjang
-let hapusIconKeranjang = document.getElementsByClassName('btn-danger')
-// console.log(hapusIconKeranjang)
+//Hapus Local Storage
+let hapusButtonBuah = document.querySelector('#buttonHapusBuah');
+let hapusBuah = document.querySelector('#keranjangBuah');
 
-for (var i = 0; i < hapusIconKeranjang.length; i++) {
-    var button = hapusIconKeranjang[i]
-    button.addEventListener('click', function(event) {
-        // console.log('clicked')
-        var buttonClicked = event.target
-        buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
-    })
+hapusButtonBuah.onclick = function () {
+  alert("Data Sudah dihapus");
+  hapusBuah.remove();
+  const items = JSON.parse(localStorage.getItem("cart-buah"));
+  const filtered = items.filter((item) => item.id !== buah.id);
+  localStorage.setItem("cart-buah", JSON.stringify(filtered));
+  refresh();
+
+function refresh() {
+  window.location.reload();
 }
-
+} 
 
 })
-
-// function updateCartTotal() {
-//     let cartItemContainer = document.getElementsByClassName('btn-keranjang')[0]
-//     let cartRows = cartItemContainer.getElementsByClassName('card-body')
-//     for (var i = 0; i < cartRows.length; i++) {
-//         let cartRow = cartRows[i]
-//         let priceElement = cartRow.getElementsByClassName('card-price')[0]
-//         let quantityElement = cartRow.getElementsByClassName('form1')[0]
-
-//         console.log(priceElement, quantityElement)
-//     }
-// }
