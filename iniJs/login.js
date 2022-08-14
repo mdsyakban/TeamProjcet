@@ -27,3 +27,4 @@ function simpanData() {
         let Login = JSON.stringify(HasilLogin);
         localStorage.setItem("login", Login);
     }
+   
